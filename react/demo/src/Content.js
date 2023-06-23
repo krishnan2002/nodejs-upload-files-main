@@ -1,18 +1,36 @@
 import React from 'react'
-const Content =() =>{
-    function handleNameChange(){
-        const names = ['Earn','Grow','Give']
-        const int = Math.floor(Math.random()*3) 
-        return names[int]
-    }
-    const handleClick=()=>{
-        console.log("Thanks for the support")
-    }
+import ItemsList from './itemsList'
+
+const Content =({items,handleCheck,handledelete}) =>{
+    // const [name, setName] = useState("EARN")
+    // function handleNameChange(){
+    //     const names = ['Earn','Grow','Give']
+    //     const int = Math.floor(Math.random()*3) 
+    //     setName(names[int])
+    // }
+    // const [count, setCount]=useState(0)
+    // function incrementFunction(){
+    //     setCount((count)=> {return count + 1})
+    // }
+    // function decrementFunction(){
+    //     setCount((count)=> {return count - 1})
+    // }
+ 
     return(
-        <div>
-            <p> Lets {handleNameChange()} Money </p>
-            <button onClick={handleClick}> Subscribe </button>
-        </div>
+        <main>
+            {/* <p> Lets {name} Money </p>
+            <button onClick={handleNameChange}> Subscribe </button>
+            <button onClick={decrementFunction}> - </button>
+            <button> {count} </button>
+            <button onClick={incrementFunction}> + </button> */}
+            {(items.length) ? (
+                <ItemsList
+                items = {items}
+                handleCheck={handleCheck}
+                handledelete={handledelete}
+            />
+            ):<p style ={{marginTop:'2rem'}}>your list is empty</p>}
+        </main>
     )
 }
 
