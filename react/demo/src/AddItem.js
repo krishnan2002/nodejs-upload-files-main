@@ -2,7 +2,7 @@ import React from 'react'
 import {FaPlus} from 'react-icons/fa'
 const AddItem = ({newItem, setNewItem, handleSumbit}) => {
   return (
-    <form className ='addForm' onSumbit={handleSumbit(e)}>
+    <form className ='addForm' onSumbit={handleSumbit}>
       <label htmlFor="addItem">Add Item</label>
       <input
         autoFocus
@@ -11,7 +11,7 @@ const AddItem = ({newItem, setNewItem, handleSumbit}) => {
         placeholder="Add Item"
         required 
         value = {newItem}
-        onChange = {(e) => setNewItem(e.target.value)}
+        onChange = {e => setNewItem(e.target.value)}
       />
       <button
         type='sumbit3'
